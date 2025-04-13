@@ -1,2 +1,14 @@
 
-🧑🏾‍💻: 
+🧑🏾‍💻: be ready to go 
+
+1 fetch links as json
+2 parse the json into object
+3 add event listener to button
+
+
+🧑🏾‍💻: do what you gotta do
+
+1 select random number between 0 and the number of links
+2 set random number as index of the link to be selected
+3 select the link
+4 navigate to the link
