@@ -8,7 +8,7 @@
 <body>
     <h1>毎日勉強するのはいい!</h1>
     <button id="benkyou">行こう！</button>
-    <script async>
+    <script type="module">
         const response = await fetch('sets-links.json');
         const data = await response.json();
         document.getElementById('benkyou').addEventListener('click', () => {
