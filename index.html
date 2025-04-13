@@ -7,5 +7,15 @@
 </head>
 <body>
     <h1>毎日勉強するのはいい!</h1>
+    <button id="benkyou">行こう！</button>
+    <script>
+        const response = await fetch('sets-links.json');
+        const data = await response.json();
+        document.getElementById('benkyou').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * data.length);
+            const randomLink = data[randomIndex];
+            window.open(randomLink, '_blank');
+        });
+    </script>
 </body>
 </html>
