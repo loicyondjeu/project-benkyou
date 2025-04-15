@@ -7,8 +7,12 @@
     <title>勉強</title>
 </head>
 <body>
-    <h1 class="text-bold text-4xl">毎日勉強するのはいい!</h1>
-    <button id="benkyou">行こう！</button>
+    <main class="grid min-h-full place-items-center bg-white px-6 py-24 lg:px-8 sm:py-32">
+        <h1 class="text-bold text-4xl">毎日勉強するのはいい!</h1>
+        <div class="mt-10 flex items-center">
+            <button class="rounded-md bg-indigo-600 px-3.5 py-2.5 font-semibold text-white shadow-sm hover:bg-indigo-500" id="benkyou">行こう！</button>
+        </div>
+    </main>
     <script type="module">
         const response = await fetch('sets-links.json');
         const data = await response.json();
