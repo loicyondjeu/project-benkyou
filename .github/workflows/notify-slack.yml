@@ -1,9 +1,10 @@
 # This workflow notifies a Slack channel when the deployment is successful
-
 name: Slack Notification
 
 on:
-  workflow_run:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
 
 jobs:
   notify-slack:
