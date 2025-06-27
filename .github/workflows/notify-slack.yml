@@ -28,7 +28,7 @@ jobs:
                   - type: mrkdwn
                     text: "*Project:*\n${{ github.repository }}"
                   - type: mrkdwn
-                    text: "*Branch:*\n${{ github.event.workflow_run.head_branch }}"
+                    text: "*Branch:*\n${{ github.head_ref || github.event.pull_request.base.ref }}"
               - type: section
                 text:
                   type: mrkdwn
