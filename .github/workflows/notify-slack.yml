@@ -28,11 +28,11 @@ jobs:
                   - type: mrkdwn
                     text: "*Project:*\n${{ github.repository }}"
                   - type: mrkdwn
-                    text: "*Branch:*\n${{ github.head_ref || github.event.pull_request.base.ref }}"
+                    text: "*Branch:*\n${{ github.head_ref }}"
               - type: section
                 text:
                   type: mrkdwn
-                  text: "<${{ github.event.workflow_run.html_url }}|View Workflow Run>"
+                  text: "<${{ github.ref }}|View Workflow Run>"
 
       - name: Checkout code
         uses: actions/checkout@v3
