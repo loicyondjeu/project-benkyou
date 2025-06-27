@@ -34,29 +34,29 @@ jobs:
                   type: mrkdwn
                   text: "<${{ github.event.workflow_run.html_url }}|View Workflow Run>"
 
-      - name: Checkout code
-        uses: actions/checkout@v3
+      # - name: Checkout code
+      #   uses: actions/checkout@v3
 
-      - name: Send Slack notification - Completed
-        uses: slackapi/slack-github-action@v2.1.0
-        with:
-          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
-          webhook-type: incoming-webhook
-          payload: |
-            text: "Deployment Successful! :rocket:"
-            blocks:
-              - type: header
-                text:
-                  type: plain_text
-                  text: "Deployment Successful :rocket:"
-                  emoji: true
-              - type: section
-                fields:
-                - type: mrkdwn
-                    text: "*Project:*\n${{ github.repository }}"
-                - type: mrkdwn
-                    text: "*Branch:*\n${{ github.event.workflow_run.head_branch }}"
-              - type: section
-                text:
-                  type: mrkdwn
-                  text: "<${{ github.event.workflow_run.html_url }}|View Workflow Run>"
+      # - name: Send Slack notification - Completed
+      #   uses: slackapi/slack-github-action@v2.1.0
+      #   with:
+      #     webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+      #     webhook-type: incoming-webhook
+      #     payload: |
+      #       text: "Deployment Successful! :rocket:"
+      #       blocks:
+      #         - type: header
+      #           text:
+      #             type: plain_text
+      #             text: "Deployment Successful :rocket:"
+      #             emoji: true
+      #         - type: section
+      #           fields:
+      #           - type: mrkdwn
+      #               text: "*Project:*\n${{ github.repository }}"
+      #           - type: mrkdwn
+      #               text: "*Branch:*\n${{ github.event.workflow_run.head_branch }}"
+      #         - type: section
+      #           text:
+      #             type: mrkdwn
+      #             text: "<${{ github.event.workflow_run.html_url }}|View Workflow Run>"
