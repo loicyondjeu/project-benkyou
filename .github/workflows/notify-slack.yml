@@ -16,39 +16,23 @@ jobs:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           webhook-type: incoming-webhook
           payload: |
-              {
-                  "text": "Deployment Started! :rocket:",
-                  "blocks": [
-                      {
-                          "type": "header",
-                          "text": {
-                              "type": "plain_text",
-                              "text": "Deployment Started :rocket:",
-                              "emoji": true
-                          }
-                      },
-                      {
-                          "type": "section",
-                          "fields": [
-                              {
-                                  "type": "mrkdwn",
-                                  "text": "*Project:*\n${{ github.repository }}"
-                              },
-                              {
-                                  "type": "mrkdwn",
-                                  "text": "*Branch:*\n${{ github.event.workflow_run.head_branch }}"
-                              }
-                          ]
-                      },
-                      {
-                          "type": "section",
-                          "text": {
-                              "type": "mrkdwn",
-                              "text": "<${{ github.event.workflow_run.html_url }}|View Workflow Run>"
-                          }
-                      }
-                  ]
-              }
+            text: "Deployment Started! :rocket:"
+            blocks:
+                - type: header
+                    text:
+                        type: plain_text
+                        text: "Deployment Started :rocket:"
+                        emoji: true
+                - type: section
+                    fields:
+                        - type: mrkdwn
+                            text: "*Project:*\n${{ github.repository }}"
+                        - type: mrkdwn
+                            text: "*Branch:*\n${{ github.event.workflow_run.head_branch }}"
+                - type: section
+                    text:
+                        type: mrkdwn
+                        text: "<${{ github.event.workflow_run.html_url }}|View Workflow Run>"
 
       - name: Checkout code
         uses: actions/checkout@v3
@@ -59,36 +43,20 @@ jobs:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           webhook-type: incoming-webhook
           payload: |
-              {
-                  "text": "Deployment Successful! :rocket:",
-                  "blocks": [
-                      {
-                          "type": "header",
-                          "text": {
-                              "type": "plain_text",
-                              "text": "Deployment Successful :rocket:",
-                              "emoji": true
-                          }
-                      },
-                      {
-                          "type": "section",
-                          "fields": [
-                              {
-                                  "type": "mrkdwn",
-                                  "text": "*Project:*\n${{ github.repository }}"
-                              },
-                              {
-                                  "type": "mrkdwn",
-                                  "text": "*Branch:*\n${{ github.event.workflow_run.head_branch }}"
-                              }
-                          ]
-                      },
-                      {
-                          "type": "section",
-                          "text": {
-                              "type": "mrkdwn",
-                              "text": "<${{ github.event.workflow_run.html_url }}|View Workflow Run>"
-                          }
-                      }
-                  ]
-              }
+            text: "Deployment Successful! :rocket:"
+            blocks:
+                - type: header
+                    text:
+                        type: plain_text
+                        text: "Deployment Successful :rocket:"
+                        emoji: true
+                - type: section
+                    fields:
+                        - type: mrkdwn
+                            text: "*Project:*\n${{ github.repository }}"
+                        - type: mrkdwn
+                            text: "*Branch:*\n${{ github.event.workflow_run.head_branch }}"
+                - type: section
+                    text:
+                        type: mrkdwn
+                        text: "<${{ github.event.workflow_run.html_url }}|View Workflow Run>"
