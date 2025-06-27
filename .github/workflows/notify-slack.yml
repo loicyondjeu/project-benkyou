@@ -34,8 +34,8 @@ jobs:
                   type: mrkdwn
                   text: "<${{ github.event.workflow_run.html_url }}|View Workflow Run>"
 
-      # - name: Checkout code
-      #   uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       # - name: Send Slack notification - Completed
       #   uses: slackapi/slack-github-action@v2.1.0
